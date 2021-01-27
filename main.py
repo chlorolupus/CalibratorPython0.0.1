@@ -120,8 +120,8 @@ class m_Panel(parent=wx.Frame, style=None):
 
     # Virtual event handlers, overide them in your derived class
     def OnDevicesChoiceChanged(self, event):
+        self.m_CalibratorLog.AppendText(self, "\n Using: " + str(self.m_choiceSelectDevice_Choice.GetSelection()))
         event.Skip()
-
     def OnStartStopButton_Clicked(self, event):
         event.Skip()
 
@@ -132,6 +132,7 @@ class m_Panel(parent=wx.Frame, style=None):
         event.Skip()
 
     def OnLogChanged(self, event):
+        print()
         event.Skip()
 
     def OnCopyLogButtonClicked(self, event):
